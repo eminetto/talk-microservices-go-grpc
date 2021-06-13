@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/eminetto/talk-microservices-go-grpc/auth/security"
-	"github.com/eminetto/talk-microservices-go-grpc/auth/user"
+	"auth/security"
+	"auth/user"
 	"encoding/json"
 	"fmt"
+	"google.golang.org/grpc"
 	"log"
 	"net"
 	"net/http"
@@ -12,7 +13,7 @@ import (
 	"time"
 
 	"github.com/codegangsta/negroni"
-	"github.com/eminetto/talk-microservices-go-grpc/proto"
+	"github.com/eminetto/talk-microservices-go-grpc/pkg/proto"
 	"github.com/gorilla/context"
 	"github.com/gorilla/mux"
 

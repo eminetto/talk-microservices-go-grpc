@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/eminetto/talk-microservices-go-grpc/auth/security"
+	"auth/security"
 	"github.com/eminetto/talk-microservices-go-grpc/pkg/proto"
 )
 
@@ -13,6 +13,7 @@ type UseCase interface {
 }
 
 type Service struct{}
+
 
 func NewService() *Service {
 	return &Service{}
@@ -38,4 +39,7 @@ func (s *Service) Validate(ctx context.Context, token *proto.Token) (*proto.User
 		IsValid: true,
 		Email:   tData["email"].(string),
 	}, nil
+}
+func (s *Service) mustEmbedUnimplementedTokenServiceServer() {
+	panic("implement me")
 }
